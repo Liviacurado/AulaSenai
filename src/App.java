@@ -100,13 +100,13 @@ public class App {
                    int i,j;
                     for (i=0;i<tam;i++){
                        for (j=0;j<tam ; j ++){
-                        matriz [i][j]=i*j;
+                        matriz [i][j]=0;
                        }
                        
                     }
                     for (i=0;i<tam;i++){
                         for (j=0;j<tam ; j ++){
-                         matriz [i][j]=i*j;
+                         matriz [i][j]=0;
                          System.out.print(matriz [i][j]+" ");
                         }
 
