@@ -64,7 +64,7 @@ public class App {
                       break;
             
                 default:
-                System.out.println("Error");
+                System.out.println("Inválido");
 
                     break;
                  }
