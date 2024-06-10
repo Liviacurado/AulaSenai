@@ -32,7 +32,7 @@ public class App {
                 
                     
                     break;
-                case 12 :
+                case 2 :
                     //subtração 
                     resultado=primeiro-segundo;
                 System.out.println("o resultado é: "+resultado);
@@ -53,6 +53,13 @@ public class App {
                 System.out.println("o resultado é: "+resDiv);
 
                     break;
+
+                case 5:
+                    resultado = Math.pow(primeiro,segundo);
+                    System.out.println(resultado);
+                    
+                    break;
+                    
                       case 0 :
                       System.out.println("Encerrando!");
 
