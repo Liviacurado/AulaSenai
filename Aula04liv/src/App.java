@@ -5,7 +5,7 @@ public class App {
        
         Scanner entrada = new Scanner (System.in);
         int primeiro=0,segundo=0;
-        int resultado;
+        double resultado;
 
         double resDiv;
 
@@ -30,9 +30,9 @@ public class App {
                 resultado=primeiro+segundo;
                 System.out.println("o resultado é: "+resultado);
                 
-                    
                     break;
-                case 12 :
+
+                case 2 :
                     //subtração 
                     resultado=primeiro-segundo;
                 System.out.println("o resultado é: "+resultado);
@@ -51,8 +51,13 @@ public class App {
                     //Divisão 
                     resDiv=(double)primeiro/(double)segundo;
                 System.out.println("o resultado é: "+resDiv);
-
                     break;
+
+                    case 5:
+                    resultado = Math.pow(primeiro,segundo);
+                    System.out.println(resultado);
+                    break;
+
                       case 0 :
                       System.out.println("Encerrando!");
 
