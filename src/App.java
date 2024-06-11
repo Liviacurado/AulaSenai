@@ -102,12 +102,14 @@ public class App {
                        for (j=0;j<tam ; j ++){
                         matriz [i][j]=0;
                        }
-                       
                     }
                     for (i=0;i<tam;i++){
                         for (j=0;j<tam ; j ++){
-                         matriz [i][j]=0;
-                         System.out.print(matriz [i][j]+" ");
+                        if (j<i){
+                            System.out.print(matriz[i][j] + " ");
+                           } 
+                        else { 
+                            System.out.print("  ");
                         }
 
                         System.out.println();
