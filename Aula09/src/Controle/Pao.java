@@ -41,19 +41,14 @@ public class Pao extends Produto {
                   "Datas inválidas";
          }
 
-         public long compara  ( LocalDate Fabricacao, Localdate validade){
-            long valor = ChronoUnit.DAYS.between(DataAtual, Localdate)
+         public long compara( LocalDate Fabricacao, Localdate validade){
+            long valor = ChronoUnit.DAYS.between(DataAtual, Localdate);
+
+            return compara;
          }
 
-        
-        Fabricacao.setCalendar(Fabricacao.getCalendarType()+ 30);
-    
-        return fs.format(Fabricacao);
-               
-            }
-    
             public double venda (int pacote ){
-                return pacote * 6.50;
+                return pacote* 6.50;
             }
     
     
@@ -61,5 +56,5 @@ public class Pao extends Produto {
                 return quilo * 15.45;
             }
     }
-
+}
 
