@@ -1,4 +1,5 @@
-public class App {
+
+public class Condicionais {
     public static void main(String[] args) throws Exception {
         // operadores condicionais 
         // if 
@@ -122,4 +123,5 @@ public class App {
         
 
     }
+}
 }
