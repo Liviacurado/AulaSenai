@@ -14,5 +14,6 @@ public class App {
         LocalDate dataAtual = LocalDate.now();
 
         System.out.println("Faltam"+Pao.compara(primeiro,segundo)+" para o vencimento do produto ") ;
-    }
+    } 
+    
 }
