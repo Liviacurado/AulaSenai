@@ -1,9 +1,11 @@
 {
     "java.project.sourcePaths": [
-        "src",
+        "CarroTeste/src",
+        "Aula03",
         "Aula02",
         "Aula01",
-        "Aula04liv/src"
+        "coracao/cora/src",
+        
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
