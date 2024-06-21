@@ -4,8 +4,7 @@
         "Aula03",
         "Aula02",
         "Aula01",
-        "coracao/cora/src",
-        
+        "calculadora/calculadora/src"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
