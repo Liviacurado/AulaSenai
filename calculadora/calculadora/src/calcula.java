@@ -1,17 +1,33 @@
-
-
-import java.util.Scanner;
-
+import javax.swing.*;
 public class calcula {
     
         public static void main(String[] args) throws Exception {
-           
-            Scanner entrada = new Scanner (System.in);
+
+
+
             int primeiro=0,segundo=0;
             double resultado;
     
             double resDiv;
     
+                 int opcao=-1;
+            // args = argumentos 
+            JTextField primeiroField = new JTextField(5);
+            JTextField segundoField = new JTextField(5);
+            
+                JPanel cal = new JPanel();
+                  cal.add(new JLabel("Primeiro número"));
+                   cal.add(primeiroField);
+                    cal.add(Box.createHorizontalStrut(5)); // a spacer
+                    cal.add(new JLabel("Segundo número"));
+                    cal.add(segundoField);
+
+                    int result = JOptionPane.showConfirmDialog(null, cal, 
+                    "Coloque os valores", JOptionPane.OK_CANCEL_OPTION);
+                    if (result == JOptionPane.OK_OPTION) {
+                  System.out.println("Primeiro " + primeiroField.getText());
+                  System.out.println("Segundo" + primeiroField.getText());
+      }
     
             // args = argumentos 
             int opcao = -1;
