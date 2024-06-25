@@ -5,10 +5,9 @@
         "Aula02",
         "Aula01",
         "coracao/cora/src",
-        
+        "bin",
+        "ManipulaArquivo"
     ],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+    "java.project.referencedLibraries": []
 }

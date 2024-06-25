@@ -1,3 +1,5 @@
+package App.src;
+
 import javax.swing.*;
 
 public class App {
