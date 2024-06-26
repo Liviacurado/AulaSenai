@@ -30,7 +30,7 @@ public class ManipuladoraArquivos {
             Scanner entrada = new Scanner(System.in);
             System.out.println("Digite algum texto: ");
             linha = entrada.nextLine();
-            writer.append(linha +"\n");
+            writer.write(linha +"\n");
             writer.close();
             entrada.close();
              }
