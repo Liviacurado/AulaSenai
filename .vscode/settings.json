@@ -1,12 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "CarroTeste/src",
-        "Aula03",
-        "Aula02",
-        "Aula01",
-        "coracao/cora/src",
-        "bin",
-        "ManipulaArquivo"
+        "ManipuladoraArquivos/src"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": []
