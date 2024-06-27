@@ -12,7 +12,7 @@ import java.io.IOException;
 public class EscritaJson {
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException{
-        JSONObject jsonObject;
+        JSONObject jsonObject ;
 
          JSONParser parse = new JSONParser ();
 
@@ -20,25 +20,26 @@ public class EscritaJson {
           String ultimoNome;
           String cidade;
           String estado;
-           // cmo inserir de diversas vezes 
+           // como inserir de diversas vezes ( usar array )
           try {
-
+              
             jsonObject = (JSONObject) parse.parse(new FileReader("ManipuladoraArquivos\\src\\ArquivoJson\\saida.json"));
              nome = (String)jsonObject.get("Nome");
              ultimoNome = (String)jsonObject.get("Ultimo Nome");
              cidade =  (String)jsonObject.get("Cidade");
              estado =  (String)jsonObject.get("Estado");
-
+              
              System.out.println("O nome completo da pessoa é"+ nome +","+ ultimoNome + "\nNascido em:" + cidade + " No estado de(o)" + estado+ ".");
-
+           
+              
           } catch (FileNotFoundException e) {
             e.printStackTrace();
           }
            catch (IOException e ){
             e.printStackTrace();
-
+             
            }
-       
+          
        
        
        
