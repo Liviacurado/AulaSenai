@@ -3,5 +3,8 @@
         "ManipuladoraArquivos/src"
     ],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": []
+    "java.project.referencedLibraries": [
+        "d:\\Users\\ALUNO\\Desktop\\json-20240303.jar",
+        "d:\\Users\\ALUNO\\Desktop\\json-simple-2.1.2.jar"
+    ]
 }

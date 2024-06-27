@@ -1,10 +1,8 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.Vector;
 
 public class ManipuladoraArquivos {
@@ -39,10 +37,9 @@ public class ManipuladoraArquivos {
         public static void escrita (String caminho, Vector<Integer> vetor) throws IOException{
             int aux;
             Vector<String> saida = new Vector<>();
-            for(int i =0;i<vetor.size(); i+=2){
-                aux = vetor.get(i)*vetor.get(i+1);
-                saida.add(String.valueOf(vetor.get(i))+" x " + String.valueOf(vetor.get(i+1)) + " = " +String.valueOf(aux));
-
+            for(int i = 0, j = 0; i <=100; i++, j++){
+                aux = i * j;
+                saida.add(String.valueOf(i) + " x " + String.valueOf(j) + " = " + String.valueOf(aux));
             }
              try{
             BufferedWriter writer = new BufferedWriter (new FileWriter(caminho,true));
