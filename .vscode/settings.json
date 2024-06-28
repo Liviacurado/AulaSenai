@@ -3,8 +3,18 @@
         "ManipuladoraArquivos/src"
     ],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "d:\\Users\\ALUNO\\Desktop\\json-20240303.jar",
-        "d:\\Users\\ALUNO\\Desktop\\json-simple-2.1.2.jar"
-    ]
+    "java.project.referencedLibraries": {
+        "include": [
+            "d:\\Users\\ALUNO\\Desktop\\json-simple-2.1.2.jar",
+            "d:\\Users\\ALUNO\\Desktop\\json-20240303.jar",
+            "d:\\Users\\ALUNO\\Desktop\\activation-1.1.jar",
+            "d:\\Users\\ALUNO\\Desktop\\javaee-api-8.0.1.jar",
+            "d:\\Users\\ALUNO\\Desktop\\javax.mail-1.6.2.jar",
+            "d:\\Users\\ALUNO\\Desktop\\javax.json-1.1.4.jar"
+        ],
+        "exclude": [
+            "d:\\Users\\ALUNO\\Downloads\\brModelo.jar",
+            "d:\\Users\\ALUNO\\Desktop\\json-20240303.jar"
+        ]
+    }
 }

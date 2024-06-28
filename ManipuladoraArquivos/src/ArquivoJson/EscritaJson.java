@@ -3,10 +3,12 @@ package ArquivoJson;
 import org.json.*;
 import org.json.simple.parser.*;
 import org.json.simple.JSONObject;
+import org.json.simple.JsonArray;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
  @SuppressWarnings("deprecation")
 public class EscritaJson {
@@ -14,12 +16,16 @@ public class EscritaJson {
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException{
         JSONObject jsonObject ;
 
-         JSONParser parse = new JSONParser ();
+        //JsonArray array = new JsonArray();
+
+        JSONParser parse = new JSONParser ();
 
           String nome;
           String ultimoNome;
           String cidade;
           String estado;
+
+
            // como inserir de diversas vezes ( usar array )
           try {
               
@@ -37,6 +43,7 @@ public class EscritaJson {
           }
            catch (IOException e ){
             e.printStackTrace();
+          
              
            }
           
