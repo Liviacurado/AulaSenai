@@ -1,14 +1,11 @@
 package ArquivoJson;
 
-import org.json.*;
 import org.json.simple.parser.*;
 import org.json.simple.JSONObject;
-import org.json.simple.JsonArray;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+
 
  @SuppressWarnings("deprecation")
 public class EscritaJson {

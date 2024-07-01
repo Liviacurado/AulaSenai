@@ -1,8 +1,6 @@
 package ArquivoJson;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import javax.json.Json;
 import javax.json.JsonObject;
 public class ibgeCnae {
@@ -26,13 +24,24 @@ public class ibgeCnae {
                                 .add("bool", false)
                                 .add("reserveItems", Json.createArrayBuilder())
                         )
+                
+                       
                         )
                         
                .build();
 
-               
+               try{
+               FileWriter writeFile = new FileWriter("ManipuladoraArquivos\\src\\ArquivoJson\\\\saida2.txt");
+                //Escreve no arquivo conteudo do Objeto JSON
+                writeFile.write(value.toString());
+                writeFile.close();
+        }
+        catch(IOException e){
+           e.printStackTrace();
+        }
 
        System.out.println(value);
+
 	}
         
     }
