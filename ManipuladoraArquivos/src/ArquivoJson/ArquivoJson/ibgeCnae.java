@@ -12,7 +12,7 @@ public class ibgeCnae {
                                 .add("id", 1)
                                 .add("name", "Item1")
                                 .add("bool", true)
-                                .add("reserveItems", Json.createArrayBuilder())
+                                .add("descrição", Json.createArrayBuilder())
                         )
                         
                 )
@@ -22,16 +22,16 @@ public class ibgeCnae {
                                 .add("id", 2)
                                 .add("name", "Item2")
                                 .add("bool", false)
-                                .add("reserveItems", Json.createArrayBuilder())
+                                .add("observações", Json.createArrayBuilder())
                         )
                 
                        
                         )
                         
                .build();
-
+  
                try{
-               FileWriter writeFile = new FileWriter("ManipuladoraArquivos\\src\\ArquivoJson\\\\saida2.txt");
+               FileWriter writeFile = new FileWriter("\\saida2.txt");
                 //Escreve no arquivo conteudo do Objeto JSON
                 writeFile.write(value.toString());
                 writeFile.close();
