@@ -1,8 +1,8 @@
 USE CLINICA2;
 INSERT INTO MEDICO ( NUMEROCRM, ESTADOCRM,NOMEMED) 
 VALUES (784348,'BA','JOÃO JOSE'),
-	   (852415,'PE', 'ANA MARIA');
-            (852419,'BA', 'JOANA SILVA');
+	   (852415,'PE', 'ANA MARIA'),
+        (852419,'BA', 'JOANA SILVA');
         
 	INSERT INTO PACIENTE ( NOMEPAC, DATANASCIMENTO, SEXO, CEP, CIDADE, ESTADO, COMPLEMENTO )
     VALUES ( 'ROSILDA', '1987-06-09', 'F', '70564300', 'BRASILIA','DF',''),
@@ -27,3 +27,14 @@ VALUES ( 'CLINICO GERAL'),
              VALUES ( '61985468767 ',8),
                      ( '61987674534',9),
                      (' 61999342567',3);
+                     
+	INSERT INTO RECEITA ( IDCONS,DESCRICAO)
+    VALUES ( 1,''),
+            (1,'REPOUSO 3 DIAS ');
+            
+            INSERT INTO MEDICAMENTOPRES ( MEDICAMENTO, IDRECEITA )
+                 VALUES ( 'SETRALINA ',1),
+                        ( 'NIMESULIDA',1);
+            
+            
+             
