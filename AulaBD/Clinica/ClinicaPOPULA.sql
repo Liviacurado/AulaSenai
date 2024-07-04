@@ -6,8 +6,8 @@ VALUES (784348,'BA','JOÃO JOSE'),
         
 	INSERT INTO PACIENTE ( NOMEPAC, DATANASCIMENTO, SEXO, CEP, CIDADE, ESTADO, COMPLEMENTO )
     VALUES ( 'ROSILDA', '1987-06-09', 'F', '70564300', 'BRASILIA','DF',''),
-          ( 'LUZIA ', '1987-08-29', 'F', '70564310', 'BRASILIA','DF',''),
-         ( 'LUANA ', '1997-03-11', 'F', '70564620', 'BRASILIA','DF',''),
+          ( 'LUZIA FERNANDES  ', '1987-08-29', 'F', '70564310', 'BRASILIA','DF',''),
+         ( 'LUANA FERNANDES ', '1997-03-11', 'F', '70564620', 'BRASILIA','DF',''),
          ( 'JOSEFA ', '1999-01-19', 'F', '7056484', 'BRASILIA','DF',''),
           ( 'JULIA ', '1999-01-19', 'F', '7056484', 'BRASILIA','DF',''),
 		  ( 'GABRIEL', '1999-01-19', 'F', '7056484', 'BRASILIA','DF','');      
@@ -15,11 +15,12 @@ VALUES (784348,'BA','JOÃO JOSE'),
 INSERT INTO ESPECIALIDADE (	NOMEESPEC)
 VALUES ( 'CLINICO GERAL'),
        ( 'PEDIATRA'),
-       ( 'GINECOLOGISTA');
+       ( 'GINECOLOGISTA'),
+       ('CARDIOLOGIA');
        
        INSERT INTO POSSUIESPECIALIDADE (IDESPEC, NUMEROCRM, ESTADOCRM)
-       VALUES (2,852419,'BA');
-       
+       VALUES (2,852419,'BA'),
+               (4,453467,'PE');
        INSERT INTO CONSULTA ( DATAHORA, ESTADOCRM, NUMEROCRM, IDPACIENTE)
          VALUES ( ' 2024-07-02','PE','852415',' 2');
          
@@ -29,12 +30,12 @@ VALUES ( 'CLINICO GERAL'),
                      (' 61999342567',3);
                      
 	INSERT INTO RECEITA ( IDCONS,DESCRICAO)
-    VALUES ( 1,''),
-            (1,'REPOUSO 3 DIAS ');
-            
-            INSERT INTO MEDICAMENTOPRES ( MEDICAMENTO, IDRECEITA )
-                 VALUES ( 'SETRALINA ',1),
-                        ( 'NIMESULIDA',1);
+    VALUES ( 15,''),
+            (15,'REPOUSO 3 DIAS ');
+           
+           INSERT INTO MEDICAMENTOPRES ( MEDICAMENTO, IDRECEITA )
+                 VALUES ( 'SETRALINA ',7),
+                        ( 'NIMESULIDA',7);
             
             
              
