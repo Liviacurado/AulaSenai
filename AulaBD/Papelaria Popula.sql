@@ -1,5 +1,6 @@
 USE PAPELARIA;
 
+
 INSERT INTO CLIENTE (CPF, NOMECLIENTE, ENDERECO, EMAIL) 
 VALUES (12345678901, 'João Silva', 'Rua A, 123', 'joao.silva@email.com'),
 		(23456789012, 'Maria Santos', 'Av. B, 456', 'maria.santos@email.com'),
