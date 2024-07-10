@@ -17,6 +17,7 @@ public void save (Usuario usuario){
 public List<Usuario> listAll (){
     List<Usuario> usuarios = new ArrayList<>();
     usuarios.add(new Usuario ("Livia","1234"));
+    usuarios.add (new Usuario("Guilherme","30303"));
      return usuarios;
 }
 

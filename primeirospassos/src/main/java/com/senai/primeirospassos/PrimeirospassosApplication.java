@@ -22,10 +22,10 @@ public class PrimeirospassosApplication {
  public String user () {
      return "Não tem usuários cadastrados";
  }
-//  @RequestMapping("calc")
-//  public int calc () {
-//      return 3+6;
-//  }
+ @RequestMapping("calc")
+ public int calc () {
+     return 3+6;
+ }
  
 	public static void main(String[] args) {
 		SpringApplication.run(PrimeirospassosApplication.class, args);
