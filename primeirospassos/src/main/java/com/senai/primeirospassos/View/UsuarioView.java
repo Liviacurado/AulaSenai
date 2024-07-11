@@ -10,7 +10,7 @@ import com.senai.primeirospassos.model.Usuario;
 public class UsuarioView {
 public void save (Usuario usuario){
 
-    System.out.println("Salvar - recebendo m nvo usuário");
+    System.out.println("Salvar - recebendo meu novo usuário");
     System.out.println(usuario);
 }
     
