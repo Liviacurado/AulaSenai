@@ -2,9 +2,11 @@ package com.api.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +15,30 @@ import com.api.api.repository.PessoaRepositorio;
 
 
 
+
 @RestController
 public class controle {
     @Autowired 
 
     private PessoaRepositorio funcao;
+
+    @PutMapping("/tudo/{id}")
+    public void edita (@PathVariable ("id") int id, @RequestBody Pessoa p) {
+        if (funcao.existsById(id)){
+            p.setId(id);
+            funcao.save(p);
+        }
+        
+        else throw new RuntimeException("id não encontrado");
+    }
+
+      @DeleteMapping("/tudo/APAGA")
+
+      public void apaga () {
+
+            funcao.deleteAll();
+          
+      }
 
     @PostMapping("/cadastro")
     public Pessoa salvar (@RequestBody Pessoa pessoinha){
@@ -46,7 +67,7 @@ public class controle {
 
     @GetMapping("/bemvindo/{nome}")
     public String bemVindo(@PathVariable String nome) {
-        return "Bem vindo(a) " +nome;
+        return "Bem vindo(a) " + nome;
     }
 
     @PostMapping("/pessoa")

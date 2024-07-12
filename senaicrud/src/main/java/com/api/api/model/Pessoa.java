@@ -32,4 +32,8 @@ public class Pessoa {
         this.idade = idade;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
