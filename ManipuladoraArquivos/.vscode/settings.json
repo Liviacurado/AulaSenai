@@ -2,6 +2,11 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "c:\\Users\\curad\\OneDrive\\Área de Trabalho\\JARFILE\\json-simple-2.1.2.jar",
+        "c:\\Users\\curad\\OneDrive\\Área de Trabalho\\JARFILE\\json-20240303.jar",
+        "c:\\Users\\curad\\OneDrive\\Área de Trabalho\\JARFILE\\javax.mail-1.6.2.jar",
+        "c:\\Users\\curad\\OneDrive\\Área de Trabalho\\JARFILE\\javax.json-api-1.1.4.jar",
+        "c:\\Users\\curad\\OneDrive\\Área de Trabalho\\JARFILE\\activation-1.1.jar"
     ]
 }
