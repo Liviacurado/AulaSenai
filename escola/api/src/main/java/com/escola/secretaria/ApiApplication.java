@@ -1,4 +1,4 @@
-package com.avaliacaoaluno.api;
+package com.escola.secretaria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
