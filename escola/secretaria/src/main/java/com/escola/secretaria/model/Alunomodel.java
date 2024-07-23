@@ -20,21 +20,22 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table (name = "Alunos" )
 public class Alunomodel {
+
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private long id;
-@Column (name = "Nome")
-@Size(min = 3, max = 50, message = "Deve conter entre 3 e 50 caracteres")
-@NotBlank (message = "O nome não pode  ser vazio") 
-@Nonnull
-private String nome;
-// nome varchar (50) not null 
+
 
 @Column (name = "Matricula")
 @NotNull
 @Size (min = 5,max=50,message = "A matricula deve conter entre 5 e 50 caracteres")
+private long matricula;
 
-private String matricula;
+@Column(name = "Nome")
+@NotBlank (message = "O nome não pode  ser vazio") 
+@Nonnull
+@Size(min = 3, max = 50, message = "Deve conter entre 3 e 50 caracteres")
+private String nome;
+// nome varchar (50) not null 
 
 @Column (name = "Turno ")
 @Enumerated(EnumType.STRING)
@@ -59,12 +60,12 @@ public void setSexo(Sexo sexo) {
     this.sexo = sexo;
 }
 
-public long getId() {
-    return id;
+public long getMatricula() {
+    return matricula;
 }
 
-public void setId(long id) {
-    this.id = id;
+public void setMatricula(long matricula) {
+    this.matricula = matricula;
 }
 
 public String getNome() {
@@ -73,14 +74,6 @@ public String getNome() {
 
 public void setNome(String nome) {
     this.nome = nome;
-}
-
-public String getMatricula() {
-    return matricula;
-}
-
-public void setMatricula(String matricula) {
-    this.matricula = matricula;
 }
 
 public Turnos getTurnos() {
