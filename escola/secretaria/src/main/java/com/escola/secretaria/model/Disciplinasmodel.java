@@ -13,33 +13,32 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table (name = "Disciplinas")
+@Table(name = "Disciplinas")
 public class Disciplinasmodel {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-private long  idDis;
+    @Id
+    @Column(name = "Id Disciplina")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-@Column (name = "Nome")
-@Enumerated (EnumType.STRING)
-@NotNull
-private Disciplinas disci;
+    @Column(name = "Nome")
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    private Disciplinas disciplinas;
 
-public long getId() {
-    return idDis;
-}
+    public long getId() {
+        return id;
+    }
 
-public void setIdDis(long idDis) {
-    this.idDis = idDis;
-}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-public Disciplinas getDisci() {
-    return disci;
-}
+    public Disciplinas getDisciplinas() {
+        return disciplinas;
+    }
 
-public void setDisci(Disciplinas disci) {
-    this.disci = disci;
-}
-
-
+    public void setDisciplinas(Disciplinas disciplinas) {
+        this.disciplinas = disciplinas;
+    }
 }

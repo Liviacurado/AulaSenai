@@ -15,8 +15,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-
 @Entity
 @Table (name = "Alunos" )
 public class Alunomodel {
@@ -27,13 +25,11 @@ public class Alunomodel {
 
 @Column (name = "Matricula")
 @NotNull
-@Size (min = 5,max=50,message = "A matricula deve conter entre 5 e 50 caracteres")
 private long matricula;
 
 @Column(name = "Nome")
 @NotBlank (message = "O nome não pode  ser vazio") 
 @Nonnull
-@Size(min = 3, max = 50, message = "Deve conter entre 3 e 50 caracteres")
 private String nome;
 // nome varchar (50) not null 
 
@@ -47,10 +43,21 @@ private Turnos turnos;
 @NotNull
 private Turma turma;
 
-@Column (name = "Sexo ")
-@Enumerated(EnumType.STRING)
-@NotNull
-private Sexo sexo;
+@Column(name = "Idade")
+    @NotNull
+    private int idade;
+    
+    @Column (name = "Sexo ")
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    private Sexo sexo;
+
+public int getIdade() {
+    return idade;
+}
+public void setIdade(int idade) {
+    this.idade = idade;
+}
 
 public Sexo getSexo() {
     return sexo;
