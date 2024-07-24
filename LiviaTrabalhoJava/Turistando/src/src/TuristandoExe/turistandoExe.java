@@ -1,11 +1,16 @@
+package src.TuristandoExe;
+
 import java.util.ArrayList;
 import java.util.List;
+import src.turistandoModel.Abastecimento;
+import src.turistandoModel.Despesa;
+import src.turistandoModel.Veiculo;
 
-public class EXE {
+public class turistandoExe {
 
-     private List<Veiculo> veiculos;
+private List<Veiculo> veiculos;
 
-       public  EXE () {
+       public  turistandoExe() {
         veiculos = new ArrayList<>();
     }
 
@@ -63,5 +68,4 @@ public class EXE {
 
         return totalQuilometragem / totalCombustivel;
     }
-
 }

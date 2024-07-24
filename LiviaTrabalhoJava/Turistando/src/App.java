@@ -2,10 +2,12 @@
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
+import src.TuristandoExe.turistandoExe;
+import src.turistandoModel.Veiculo;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        EXE app = new EXE ();
+        turistandoExe app = new turistandoExe ();
         while (true) {
             String[] options = {"Cadastrar Veículo", "Registrar Despesa", "Calcular Consumo Médio", "Sair"};
             int choice = JOptionPane.showOptionDialog(null, "Escolha uma opção", "Turistando",
@@ -23,7 +25,8 @@ public class App {
         }
     }
 
-    private static void cadastrarVeiculo(EXE app) throws Exception {
+    private static void cadastrarVeiculo(turistandoExe app) throws Exception {
+
         String marca = JOptionPane.showInputDialog("Marca:");
         String modelo = JOptionPane.showInputDialog("Modelo:");
         int anoFabricacao = Integer.parseInt(JOptionPane.showInputDialog("Ano de fabricação:"));
@@ -39,10 +42,9 @@ public class App {
         app.cadastrarVeiculo(veiculo);
     }
 
-    private static void registrarDespesa(EXE app) throws Exception {
+    private static void registrarDespesa(turistandoExe app) throws Exception {
         String placa = JOptionPane.showInputDialog("Placa do veículo:");
         String tipoDespesa = JOptionPane.showInputDialog("Tipo de despesa (Abastecimento, Manutenção, Imposto, Multa, Outro):");
-
-        double valor;
+        String valor = JOptionPane.showInputDialog("Valor: ");
     }
 }

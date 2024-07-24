@@ -1,7 +1,7 @@
+package src.turistandoModel;
 import java.util.Date;
 
 public abstract class Despesa {
-
     private Date data;
     private double valor;
 

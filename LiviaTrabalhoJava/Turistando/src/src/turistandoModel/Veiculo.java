@@ -1,3 +1,5 @@
+package src.turistandoModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -113,8 +115,7 @@ private String marca;
     public void setDespesas(List<Despesa> despesas) {
         this.despesas = despesas;
     }
-
-
+    
     public void adicionarDespesa(Despesa despesa) {
         despesas.add(despesa);
     }
@@ -123,6 +124,4 @@ private String marca;
         return despesas;
     }
 
-
 }
-

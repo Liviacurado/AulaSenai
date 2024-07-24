@@ -1,14 +1,13 @@
-
+package src.turistandoModel;
 import java.util.Date;
 
-public class Abastecimento extends Despesa{
-
+public class Abastecimento extends Despesa {
 
     private double quantidadeCombustivel;
     private double quilometragem;
 
     public Abastecimento(Date data, double valor, double quantidadeCombustivel, double quilometragem) {
-        super(data, valor);
+        super(data,valor);
         this.quantidadeCombustivel = quantidadeCombustivel;
         this.quilometragem = quilometragem;
     }
@@ -20,6 +19,5 @@ public class Abastecimento extends Despesa{
     public double getQuilometragem() {
         return quilometragem;
     }
+
 }
-
-
