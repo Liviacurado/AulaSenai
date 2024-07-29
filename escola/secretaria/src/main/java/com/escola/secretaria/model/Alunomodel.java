@@ -12,6 +12,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +24,13 @@ public class Alunomodel {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+@OneToOne
+@JoinColumn(name = "isres", referencedColumnName = "idRes")
+private Resultadosmodel resultados;
+
+public Alunomodel(Resultadosmodel resultados) {
+    this.resultados = resultados;
+}
 
 @Column (name = "Matricula")
 @NotNull

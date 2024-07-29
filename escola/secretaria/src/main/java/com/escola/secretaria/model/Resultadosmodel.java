@@ -19,7 +19,7 @@ public class Resultadosmodel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Id RES")
+    @Column(name = "IdRES")
     private long idRes;
     
     @OneToOne(cascade = CascadeType.ALL)

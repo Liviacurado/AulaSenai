@@ -9,6 +9,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
@@ -20,6 +22,11 @@ public class Disciplinasmodel {
     @Column(name = "Id Disciplina")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+     
+    @OneToOne
+    @JoinColumn(name = "idsres", referencedColumnName = "idRes")
+    private Resultadosmodel resultados;
 
     @Column(name = "Nome")
     @Enumerated(EnumType.STRING)
