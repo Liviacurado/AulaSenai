@@ -9,8 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Resultados")
@@ -31,31 +29,33 @@ public class Resultadosmodel {
     private Disciplinasmodel idDis;
     
     @Column(name  = "PriNota")
-    @NotBlank
-    @NotNull
     private double priNota;
     
     @Column(name  = "SegNota")
-    @NotBlank
-    @NotNull
     private double segNota;
     
     @Column(name  = "TerNota")
-    @NotBlank
-    @NotNull
     private double terNota;
     
     @Column(name  = "QuaNota")
-    @NotBlank
-    @NotNull
     private double quaNota;
     
     @Column(name  = "Media")
-    @NotBlank
-    @NotNull
     private double media;
     
     
+    public Resultadosmodel(long idRes, Alunomodel matricula, Disciplinasmodel idDis, double priNota, double segNota,
+            double terNota, double quaNota, double media) {
+        this.idRes = idRes;
+        this.matricula = matricula;
+        this.idDis = idDis;
+        this.priNota = priNota;
+        this.segNota = segNota;
+        this.terNota = terNota;
+        this.quaNota = quaNota;
+        this.media = media;
+    }
+
     public double getPriNota() {
         return priNota;
     }
