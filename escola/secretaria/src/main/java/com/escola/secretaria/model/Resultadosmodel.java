@@ -1,5 +1,7 @@
 package com.escola.secretaria.model;
 
+import java.io.Serializable;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Resultados")
-public class Resultadosmodel {
+public class Resultadosmodel implements Serializable{
 
     
     @Id
@@ -42,8 +44,14 @@ public class Resultadosmodel {
     
     @Column(name  = "Media")
     private double media;
+
+    @Column(name = "ResultadoFinal")
     
     
+    public void setResultadoFinal(String resultadoFinal) {
+        ResultadoFinal = resultadoFinal;
+    }
+
     public Resultadosmodel(long idRes, Alunomodel matricula, Disciplinasmodel idDis, double priNota, double segNota,
             double terNota, double quaNota, double media) {
         this.idRes = idRes;
@@ -120,6 +128,26 @@ public class Resultadosmodel {
         this.idDis = idDis;
     }
 
-}
+    public void resultado(double pri, double seg, double ter, double qua){
+        double media = 0.0;
+        media = (pri + seg + ter + qua)/4;
+        setMedia(media);
+    }
 
+      public void statusResultado(double getmedia ){
+        
+        if (media>=6.0){
+            setResultadoFinal("Aprovado");
+
+            if (media==5.9 || media <5.0)
+            setResultadoFinal("Recuperação");
+        }
+        
+         else {
+
+           setResultadoFinal("Reprovado");
+      }
+    }
+
+}
 

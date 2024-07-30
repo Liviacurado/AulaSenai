@@ -14,6 +14,7 @@ import com.escola.secretaria.model.Alunomodel;
 import com.escola.secretaria.model.Disciplinasmodel;
 import com.escola.secretaria.model.Resultadosmodel;
 
+
 @RestController
 public class Alunocontroller {
 
@@ -55,8 +56,14 @@ public class Alunocontroller {
     
     @PostMapping("/lancarnotas")
     public Resultadosmodel inserirNotas(@RequestBody Resultadosmodel resultados){
+        resultados.resultado(resultados.getPriNota(), resultados.getSegNota(), resultados.getTerNota(), resultados.getQuaNota());
+        resultados.statusResultado(0);
         return resultadoRepository.save(resultados);
     }
+@GetMapping("\status")
+public List<Resultadosmodel>statusResultado() {
+    return resultadoRepository.findAll();
+}
 
 
 }
