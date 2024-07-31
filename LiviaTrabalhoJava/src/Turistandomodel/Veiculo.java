@@ -135,6 +135,12 @@ private String marca;
 
 
 
+    public void put(String placa, Veiculo veiculo) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
+
     
 
 }
