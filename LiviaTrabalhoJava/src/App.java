@@ -65,7 +65,9 @@ public class App {
           JComboBox<String> CombustivelBox= new JComboBox<>(opcoes);
 		      JLabel RENAVAN = new JLabel("RENAVAN");
           JTextField texto8 = new JTextField(15);
-          
+          JButton btnIns = new JButton();
+          btnIns.setBounds(70, 70, 60, 20);
+           btnIns.setText("Inserir");
 
 
            panel.add(labelc);
@@ -105,7 +107,8 @@ public class App {
            panel.add(Combustivel);
            panel.add(Box.createHorizontalStrut(8000));
            panel.add(CombustivelBox);
-
+           panel.add(Box.createHorizontalStrut(8000));
+           panel.add(btnIns);
            jf1.setVisible(true);
             
              }
