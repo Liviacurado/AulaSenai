@@ -1,6 +1,5 @@
 package Turistandomodel;
 
-import Exception.AbastecimentosInsuficientesException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +16,13 @@ public class Veiculo {
     private String renavam;
     private List<Abastecimento> abastecimentos = new ArrayList<>();
     private List<Gasto> gastos = new ArrayList<>();
+    private List<Veiculo> veiculos = new ArrayList<>();
 
-
-
-    public Veiculo(String marca, String modelo, int anoFabricacao, int anoModelo, String motorizacao, int capacidadeTanque, String combustiveis, String cor, String placa, String renavam) {
+    
+    
+    public Veiculo(String marca, String modelo, int anoFabricacao, int anoModelo, String motorizacao,
+    int capacidadeTanque, String combustiveis, String cor, String placa, String renavam,
+    List<Abastecimento> abastecimentos, List<Gasto> gastos, List<Veiculo> veiculos) {
         this.marca = marca;
         this.modelo = modelo;
         this.anoFabricacao = anoFabricacao;
@@ -33,8 +35,19 @@ public class Veiculo {
         this.renavam = renavam;
         this.abastecimentos = abastecimentos;
         this.gastos = gastos;
+        this.veiculos = veiculos;
     }
-
+    
+        public List<Veiculo> getVeiculos() {
+            return veiculos;
+        }
+    
+    
+    
+        public void setVeiculos(List<Veiculo> veiculos) {
+            this.veiculos = veiculos;
+        }
+    
 
 
     public String getMarca() {
@@ -183,25 +196,7 @@ public class Veiculo {
        gastos.add(gasto);
        }
 
-
-    public double calcularConsumoMedio() throws AbastecimentosInsuficientesException {
-        if (abastecimentos.size() < 2) {
-            throw new AbastecimentosInsuficientesException("Mínimo de dois abastecimentos completos necessários.");
-        }
-
-        double kmPercorridos = 0;
-        double litrosConsumidos = 0;
-
-        for (int i = 1; i < abastecimentos.size(); i++) {
-            Abastecimento anterior = abastecimentos.get(i - 1);
-            Abastecimento atual = abastecimentos.get(i);
-            kmPercorridos += atual.getQuilometragem() - anterior.getQuilometragem();
-            litrosConsumidos += atual.getQuantidadeCombustivel();
-        }
-
-        return kmPercorridos / litrosConsumidos;
-
-    }
+    
     @Override
     public String toString() {
         return String.format(
@@ -210,7 +205,5 @@ public class Veiculo {
                 renavam);
     }
 
-}
+}  
     
-    
-

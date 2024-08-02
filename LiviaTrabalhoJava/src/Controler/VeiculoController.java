@@ -1,16 +1,27 @@
 package Controler;
 
 
+import Exception.AbastecimentosInsuficientesException;
 import Exception.InformacaoIncompletaException;
 import Exception.ValorInvalidoException;
 import Exception.VeiculoNaoCadastradoException;
 import Turistandomodel.Abastecimento;
 import Turistandomodel.Gasto;
 import Turistandomodel.Veiculo;
+import java.time.LocalDate;
 import java.util.*;
 
 public class VeiculoController {
-    private Map<String, Veiculo> veiculos = new HashMap<>();
+    
+       private Veiculo veiculo;
+    
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
 
     public void cadastrarVeiculo(String marca, String modelo, int anoFabricacao, int anoModelo, String motorizacao,
                                  int capacidadeTanque, String combustiveis, String cor, String placa, String renavam) throws InformacaoIncompletaException, VeiculoNaoCadastradoException {
@@ -22,8 +33,7 @@ public class VeiculoController {
         
     }
 
-    public void registrarGasto(Gasto gastos, String placa, double valor) throws VeiculoNaoCadastradoException, ValorInvalidoException {
-        Veiculo veiculo = veiculos.get(placa);
+    public void registrarGasto(Gasto gasto,String categoria, String descricao, double valor, LocalDate data) throws VeiculoNaoCadastradoException, ValorInvalidoException {
         if (veiculo == null) {
             throw new VeiculoNaoCadastradoException("Veículo não cadastrado.");
         }
@@ -31,13 +41,37 @@ public class VeiculoController {
         if (valor < 0) {
             throw new ValorInvalidoException("O valor do gasto não pode ser negativo.");
         }
+      
+        veiculo.getGastos().add(gasto);
+    }
 
-        veiculo.getGastos().add(gastos);
+
+     public double calcularConsumoMedio( Veiculo veiculo,Abastecimento abastecimento) throws AbastecimentosInsuficientesException {
+
+        List <Abastecimento> abastecimentos = veiculo.getAbastecimentos();
+    
+        
+        if (abastecimentos.size() < 2) {
+            throw new AbastecimentosInsuficientesException("Mínimo de dois abastecimentos completos necessários.");
+        }
+
+        double kmPercorridos = 0;
+        double litrosConsumidos = 0;
+
+        for (int i = 1; i < abastecimentos.size(); i++) {
+            Abastecimento anterior = abastecimentos.get(i - 1);
+            Abastecimento atual = abastecimentos.get(i);
+            kmPercorridos += atual.getQuilometragem() - anterior.getQuilometragem();
+            litrosConsumidos += atual.getQuantidadeCombustivel();
+        }
+
+        return kmPercorridos / litrosConsumidos;
+
     }
 
     public void registrarAbastecimento(Abastecimento abastecimento,String placa,double quantidadeCombustivel,double valor) throws VeiculoNaoCadastradoException, ValorInvalidoException {
-        Veiculo veiculo = veiculos.get(placa);
-        if (veiculo == null) {
+        if 
+        (veiculo == null) {
             throw new VeiculoNaoCadastradoException("Veículo não cadastrado.");
         }
 
@@ -48,75 +82,24 @@ public class VeiculoController {
        veiculo.getAbastecimentos();
     }
 
-}
+    public double GastoTotal() {
+        List<Gasto> gastos = veiculo.getGastos();
+        List<Abastecimento> abastecimentos = veiculo.getAbastecimentos();
+        double gastoTotal = 0.0;
 
+        for (Gasto gasto : gastos) {
+            gastoTotal += gasto.getValor();
+        }
 
+        for (Abastecimento abastecimento : abastecimentos) {
+            gastoTotal += abastecimento.getValor();
+        }
+        return gastoTotal;
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     public String gerarRelatorioGeral(String placa) throws VeiculoNaoCadastradoException {
-//         Veiculo veiculo = veiculos.get(placa);
-//         if (veiculo == null) {
-//             throw new VeiculoNaoCadastradoException("Veículo não cadastrado.");
-//         }
-
-//         StringBuilder relatorio = new StringBuilder("Relatório Geral\n");
-//         relatorio.append("Marca: ").append(veiculo.getMarca()).append("\n");
-//         relatorio.append("Modelo: ").append(veiculo.getModelo()).append("\n");
-//         relatorio.append("Ano de Fabricação: ").append(veiculo.getAnoFabricacao()).append("\n");
-//         relatorio.append("Ano do Modelo: ").append(veiculo.getAnoModelo()).append("\n");
-//         relatorio.append("Motorização: ").append(veiculo.getMotorizacao()).append("\n");
-//         relatorio.append("Combustíveis: ").append(veiculo.getCombustiveis()).append("\n");
-//         relatorio.append("Cor: ").append(veiculo.getCor()).append("\n");
-//         relatorio.append("Placa: ").append(veiculo.getPlaca()).append("\n");
-//         relatorio.append("Renavam: ").append(veiculo.getRenavam()).append("\n\n");
-
-//         relatorio.append("Abastecimentos:\n");
-//         for (Abastecimento abastecimento : veiculo.getAbastecimentos()) {
-//             relatorio.append("Valor: ").append(abastecimento.getValor()).append(" - Quantidade: ").append(abastecimento.getQuantidadeCombustivel()).append("L - Quilometragem: ").append(abastecimento.getQuilometragem()).append("\n");
-//         }
-
-//         relatorio.append("\nGastos:\n");
-//         for (Gasto gasto : veiculo.getGastos()) {
-//             relatorio.append("Categoria: ").append(gasto.getCategoria()).append(" - Valor: ").append(gasto.getValor()).append(" - Data: ").append(gasto.getData()).append(" - Descrição: ").append(gasto.getDescricao()).append("\n");
-//         }
-
-//         return relatorio.toString();
-//     }
-
-//     public String gerarRelatorioPorCategoria(String placa, CategoriaGasto categoria) throws VeiculoNaoCadastradoException {
-//         Veiculo veiculo = veiculos.get(placa);
-//         if (veiculo == null) {
-//             throw new VeiculoNaoCadastradoException("Veículo não cadastrado.");
-//         }
-
-//         StringBuilder relatorio = new StringBuilder("Relatório por Categoria - ").append(categoria).append("\n");
-
-//         relatorio.append("Gastos:\n");
-//         for (Gasto gasto : veiculo.getGastos()) {
-//             if (gasto.getCategoria() == categoria) {
-//                 relatorio.append("Valor: ").append(gasto.getValor()).append(" - Data: ").append(gasto.getData()).append(" - Descrição: ").append(gasto.getDescricao()).append("\n");
-//             }
-//         }
-
-//         return relatorio.toString();
-//     }
-// }
+    
+    }
 
   
      

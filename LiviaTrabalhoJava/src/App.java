@@ -79,9 +79,9 @@ public class App {
                   case 1:
                       registrarAbastecimento();
                       break;
-                  // case 2:
-                  //     registrarGasto();
-                  //     break;
+                //   case 2:
+                //       registrarGasto();
+                //       break;
                   // case 3:
                   //     calcularConsumoMedio();
                   //     break;
@@ -128,9 +128,7 @@ public class App {
           JComboBox<String> CombustivelBox= new JComboBox<>(opcoes);
 		      JLabel RENAVAN = new JLabel("RENAVAN");
           JTextField texto8 = new JTextField(15);
-          JButton btnIns = new JButton();
-          btnIns.setBounds(70, 70, 60, 20);
-          btnIns.setText("Inserir");
+          
 
 
            panel.add(titulo);
@@ -171,56 +169,74 @@ public class App {
            panel.add(Box.createHorizontalStrut(8000));
            panel.add(CombustivelBox);
            panel.add(Box.createHorizontalStrut(8000));
-           panel.add(btnIns);
+           
            
            jf1.setVisible(true);
              }
 
              
               private static void registrarAbastecimento() throws Exception{
+                
+                    JPanel panel = new JPanel();
+                     JFrame jf1= new JFrame();
+                       jf1.setLayout(new BorderLayout(10,5));
+                        jf1.setTitle("Turistando");
+                         jf1.setSize(300,800);
+                          jf1.setLocationRelativeTo(null);
+                           jf1.setDefaultCloseOperation(jf1.EXIT_ON_CLOSE);
 
+                    JLabel titulo2 = new JLabel("          Abastecimento           ");
+
+                     JTextField Placa = new JTextField("Placa do Veículo:");
+                     JTextField categoria = new JTextField("Categoria do Gasto (MANUTENCAO, IMPOSTO, MULTA, OUTROS):".toUpperCase());
+                     JTextField valor = new JTextField("Valor do Gasto:");
+                     JTextField descricao = new JTextField("Descricao:");
+
+
+
+                 
               
                 if (veiculos.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Nenhum veículo registrado. Registre um veículo primeiro.", "Erro",
-                    JOptionPane.ERROR_MESSAGE);
+               JOptionPane.showMessageDialog(null, "Nenhum veículo registrado. Registre um veículo primeiro.", "Erro",
+                JOptionPane.ERROR_MESSAGE);
             return;
         }
+    }
 
-      
+        // JPanel panel = new JPanel();
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        // panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        JTextField quilometragemField = new JTextField(10);
-        JTextField valorField = new JTextField(10);
-        JTextField quantidadeField = new JTextField(10);
-
+        // JTextField quilometragemField = new JTextField(10);
+        // JTextField valorField = new JTextField(10);
+        // JTextField quantidadeField = new JTextField(10);
 
 
-        panel.add(new JLabel("Quilometragem:"));
-        panel.add(quilometragemField);
-        panel.add(Box.createVerticalStrut(15));
 
-        panel.add(new JLabel("Valor (R$):"));
-        panel.add(valorField);
-        panel.add(Box.createVerticalStrut(15));
+        // panel.add(new JLabel("Quilometragem:"));
+        // panel.add(quilometragemField);
+        // panel.add(Box.createVerticalStrut(15));
 
-        panel.add(new JLabel("Quantidade de combustível (litros):"));
-        panel.add(quantidadeField);
-        panel.add(Box.createVerticalStrut(15));
+        // panel.add(new JLabel("Valor (R$):"));
+        // panel.add(valorField);
+        // panel.add(Box.createVerticalStrut(15));
 
-        // panel.add(new JLabel("Tipo de Combustível:"));
-        // panel.add(CombustivelBox);
+        // panel.add(new JLabel("Quantidade de combustível (litros):"));
+        // panel.add(quantidadeField);
+        // panel.add(Box.createVerticalStrut(15));
 
-        int result = JOptionPane.showConfirmDialog(null, panel, "Registrar Abastecimento", JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE);
+        // // panel.add(new JLabel("Tipo de Combustível:"));
+        // // panel.add(CombustivelBox);
+
+        // int result = JOptionPane.showConfirmDialog(null, panel, "Registrar Abastecimento", JOptionPane.OK_CANCEL_OPTION,
+        //         JOptionPane.PLAIN_MESSAGE);
 
 
                 
 
                 
       }
-          }
+          
              
   
 

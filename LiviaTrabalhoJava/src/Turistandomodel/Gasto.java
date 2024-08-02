@@ -1,17 +1,16 @@
 package Turistandomodel;
 import Enum.CategoriaGasto;
-import java.util.Date;
-
+import java.time.LocalDate;
 public class Gasto {
 
    
         private CategoriaGasto categoria;
         private double valor;
-        private Date data;
+        private LocalDate data;
         private String descricao;
 
 
-        public Gasto(CategoriaGasto categoria, double valor, Date data, String descricao) {
+        public Gasto(CategoriaGasto categoria, double valor, LocalDate data, String descricao) {
                 this.categoria = categoria;
                 this.valor = valor;
                 this.data = data;
@@ -29,10 +28,10 @@ public class Gasto {
         public void setValor(double valor) {
                 this.valor = valor;
         }
-        public Date getData() {
+        public LocalDate getData() {
                 return data;
         }
-        public void setData(Date data) {
+        public void setData(LocalDate data) {
                 this.data = data;
         }
         public String getDescricao() {
@@ -46,10 +45,6 @@ public class Gasto {
                 
             }
 
-            @Override
-            public String toString() {
-                return String.format("%s: %s - R$ %.2f em %s", categoria, descricao, valor, data);
-            }
 
             
         }
