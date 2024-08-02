@@ -1,26 +1,26 @@
 package Turistandomodel;
 
-import java.util.Date;
+import Exception.AbastecimentosInsuficientesException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Veiculo extends Despesa {
-private String marca;
+public class Veiculo {
+    private String marca;
     private String modelo;
     private int anoFabricacao;
     private int anoModelo;
     private String motorizacao;
-    private double capacidadeTanque;
-    private List<String> combustiveis;
+    private int capacidadeTanque;
+    private String combustiveis;
     private String cor;
     private String placa;
     private String renavam;
+    private List<Abastecimento> abastecimentos = new ArrayList<>();
+    private List<Gasto> gastos = new ArrayList<>();
 
 
-    
-    public Veiculo(Date data, double valor, String descricao, List<Despesa> despesas, String marca, String modelo,
-            int anoFabricacao, int anoModelo, String motorizacao, double capacidadeTanque, List<String> combustiveis,
-            String cor, String placa, String renavam) {
-        super(data, valor, descricao, despesas);
+
+    public Veiculo(String marca, String modelo, int anoFabricacao, int anoModelo, String motorizacao, int capacidadeTanque, String combustiveis, String cor, String placa, String renavam) {
         this.marca = marca;
         this.modelo = modelo;
         this.anoFabricacao = anoFabricacao;
@@ -31,12 +31,16 @@ private String marca;
         this.cor = cor;
         this.placa = placa;
         this.renavam = renavam;
+        this.abastecimentos = abastecimentos;
+        this.gastos = gastos;
     }
 
-  
+
+
     public String getMarca() {
         return marca;
     }
+
 
 
     public void setMarca(String marca) {
@@ -44,9 +48,11 @@ private String marca;
     }
 
 
+
     public String getModelo() {
         return modelo;
     }
+
 
 
     public void setModelo(String modelo) {
@@ -54,9 +60,11 @@ private String marca;
     }
 
 
+
     public int getAnoFabricacao() {
         return anoFabricacao;
     }
+
 
 
     public void setAnoFabricacao(int anoFabricacao) {
@@ -64,9 +72,11 @@ private String marca;
     }
 
 
+
     public int getAnoModelo() {
         return anoModelo;
     }
+
 
 
     public void setAnoModelo(int anoModelo) {
@@ -74,9 +84,11 @@ private String marca;
     }
 
 
+
     public String getMotorizacao() {
         return motorizacao;
     }
+
 
 
     public void setMotorizacao(String motorizacao) {
@@ -84,24 +96,29 @@ private String marca;
     }
 
 
-    public double getCapacidadeTanque() {
+
+    public int getCapacidadeTanque() {
         return capacidadeTanque;
     }
 
 
-    public void setCapacidadeTanque(double capacidadeTanque) {
+
+    public void setCapacidadeTanque(int capacidadeTanque) {
         this.capacidadeTanque = capacidadeTanque;
     }
 
 
-    public List<String> getCombustiveis() {
+
+    public String getCombustiveis() {
         return combustiveis;
     }
 
 
-    public void setCombustiveis(List<String> combustiveis) {
+
+    public void setCombustiveis(String combustiveis) {
         this.combustiveis = combustiveis;
     }
+
 
 
     public String getCor() {
@@ -109,9 +126,11 @@ private String marca;
     }
 
 
+
     public void setCor(String cor) {
         this.cor = cor;
     }
+
 
 
     public String getPlaca() {
@@ -119,14 +138,17 @@ private String marca;
     }
 
 
+
     public void setPlaca(String placa) {
         this.placa = placa;
     }
 
 
+
     public String getRenavam() {
         return renavam;
     }
+
 
 
     public void setRenavam(String renavam) {
@@ -135,13 +157,60 @@ private String marca;
 
 
 
-    public void put(String placa, Veiculo veiculo) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Abastecimento> getAbastecimentos() {
+        return abastecimentos;
     }
 
 
 
-    
+    public void setAbastecimentos(List<Abastecimento> abastecimentos) {
+        this.abastecimentos = abastecimentos;
+    }
+
+
+
+    public List<Gasto> getGastos() {
+        return gastos;
+    }
+
+
+
+    public void setGastos(List<Gasto> gastos) {
+        this.gastos = gastos;
+    }
+
+    public void adicionarGasto(Gasto gasto) {
+       gastos.add(gasto);
+       }
+
+
+    public double calcularConsumoMedio() throws AbastecimentosInsuficientesException {
+        if (abastecimentos.size() < 2) {
+            throw new AbastecimentosInsuficientesException("Mínimo de dois abastecimentos completos necessários.");
+        }
+
+        double kmPercorridos = 0;
+        double litrosConsumidos = 0;
+
+        for (int i = 1; i < abastecimentos.size(); i++) {
+            Abastecimento anterior = abastecimentos.get(i - 1);
+            Abastecimento atual = abastecimentos.get(i);
+            kmPercorridos += atual.getQuilometragem() - anterior.getQuilometragem();
+            litrosConsumidos += atual.getQuantidadeCombustivel();
+        }
+
+        return kmPercorridos / litrosConsumidos;
+
+    }
+    @Override
+    public String toString() {
+        return String.format(
+                "Marca: %s, Modelo: %s, Ano de Fabricação: %d, Ano do Modelo: %d, Motorização: %s, Capacidade do Tanque: %.2f litros, Combustível: %s, Cor: %s, Placa: %s, RENAVAM: %s",
+                marca, modelo, anoFabricacao, anoModelo, motorizacao, combustiveis, cor, placa,
+                renavam);
+    }
 
 }
+    
+    
 
