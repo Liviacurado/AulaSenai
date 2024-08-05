@@ -1,8 +1,6 @@
 package Controler;
 
-
 import Exception.AbastecimentosInsuficientesException;
-import Exception.InformacaoIncompletaException;
 import Exception.ValorInvalidoException;
 import Exception.VeiculoNaoCadastradoException;
 import Turistandomodel.Abastecimento;
@@ -23,17 +21,10 @@ public class VeiculoController {
         this.veiculo = veiculo;
     }
 
-    public void cadastrarVeiculo(String marca, String modelo, int anoFabricacao, int anoModelo, String motorizacao,
-                                 int capacidadeTanque, String combustiveis, String cor, String placa, String renavam) throws InformacaoIncompletaException, VeiculoNaoCadastradoException {
-        if (marca.isEmpty() || modelo.isEmpty() || motorizacao.isEmpty() || combustiveis.isEmpty() || cor.isEmpty() || placa.isEmpty() || renavam.isEmpty()) {
-            throw new InformacaoIncompletaException("Todos os campos devem ser preenchidos.");
-        }
-        
 
-        
-    }
 
-    public void registrarGasto(Gasto gasto,String categoria, String descricao, double valor, LocalDate data) throws VeiculoNaoCadastradoException, ValorInvalidoException {
+
+    public void registrarGasto(Gasto gasto,String categoria, String descricao, double valor, LocalDate data,String placa ) throws VeiculoNaoCadastradoException, ValorInvalidoException {
         if (veiculo == null) {
             throw new VeiculoNaoCadastradoException("Veículo não cadastrado.");
         }
@@ -41,65 +32,58 @@ public class VeiculoController {
         if (valor < 0) {
             throw new ValorInvalidoException("O valor do gasto não pode ser negativo.");
         }
-      
+        veiculo.getGastos().add(gasto
+);
+    }
+
+
+     public double calcularConsumoMedio() throws AbastecimentosInsuficientesException {
+
+        List<Abastecimento> abastecimentos = veiculo.getAbastecimentos();
+        int numAbastecimentos = abastecimentos.size();
+    
+        if (numAbastecimentos < 2) {
+            throw new AbastecimentosInsuficientesException("A média só pode ser calculada depois de dois abastecimentos.");
+        }
+    
+        Abastecimento primeiroAbastecimento = abastecimentos.get(0);
+        Abastecimento ultimoAbastecimento = abastecimentos.get(numAbastecimentos - 1);
+    
+        double totalKm = ultimoAbastecimento.getQuilometragem() - primeiroAbastecimento.getQuilometragem();
+        double totalLitros = 0;
+    
+        for (Abastecimento abastecimento : abastecimentos) {
+            totalLitros += abastecimento.getQuantidadeCombustivel();
+        }
+    
+        return totalKm / totalLitros;
+    }
+
+    public void adicionarGasto(Gasto gasto,String categoria, String descricao, double valor, LocalDate data) throws ValorInvalidoException {
+        if (gasto == null) {
+            throw new ValorInvalidoException("Gasto não pode ser nulo.");
+        }
         veiculo.getGastos().add(gasto);
     }
 
-
-     public double calcularConsumoMedio( Veiculo veiculo,Abastecimento abastecimento) throws AbastecimentosInsuficientesException {
-
-        List <Abastecimento> abastecimentos = veiculo.getAbastecimentos();
-    
-        
-        if (abastecimentos.size() < 2) {
-            throw new AbastecimentosInsuficientesException("Mínimo de dois abastecimentos completos necessários.");
-        }
-
-        double kmPercorridos = 0;
-        double litrosConsumidos = 0;
-
-        for (int i = 1; i < abastecimentos.size(); i++) {
-            Abastecimento anterior = abastecimentos.get(i - 1);
-            Abastecimento atual = abastecimentos.get(i);
-            kmPercorridos += atual.getQuilometragem() - anterior.getQuilometragem();
-            litrosConsumidos += atual.getQuantidadeCombustivel();
-        }
-
-        return kmPercorridos / litrosConsumidos;
-
+    public List<Abastecimento> getAbastecimentos() {
+        return veiculo.getAbastecimentos();
     }
 
-    public void registrarAbastecimento(Abastecimento abastecimento,String placa,double quantidadeCombustivel,double valor) throws VeiculoNaoCadastradoException, ValorInvalidoException {
-        if 
-        (veiculo == null) {
-            throw new VeiculoNaoCadastradoException("Veículo não cadastrado.");
-        }
 
-        if (valor < 0 || quantidadeCombustivel < 0) {
-            throw new ValorInvalidoException("O valor ou a quantidade de combustível não pode ser negativa.");
-        }
 
-       veiculo.getAbastecimentos();
-    }
-
-    public double GastoTotal() {
+    public double calcularGastoTotal() {
         List<Gasto> gastos = veiculo.getGastos();
-        List<Abastecimento> abastecimentos = veiculo.getAbastecimentos();
-        double gastoTotal = 0.0;
-
-        for (Gasto gasto : gastos) {
-            gastoTotal += gasto.getValor();
-        }
-
-        for (Abastecimento abastecimento : abastecimentos) {
-            gastoTotal += abastecimento.getValor();
-        }
-        return gastoTotal;
-
+        double[] gastoTotal = {0.0};
+    
+        gastos.forEach(gasto -> gastoTotal[0] += gasto.getValor());
+    
+        return gastoTotal[0];
     }
+}
 
     
-    }
+    
 
   
      

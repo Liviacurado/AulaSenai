@@ -3,10 +3,12 @@ package Enum;
 public enum tipoAbastecimento {
 
 
-    ABASTECIMENTO,
-    IMPOSTO,
-    MULTA,
-    MANUTENCAO,
-    OUTROS
+    GASOLINA,
+     DIESEL,
+      ALCOOL,
+        GNV,
+   
+           
+
 
 }
