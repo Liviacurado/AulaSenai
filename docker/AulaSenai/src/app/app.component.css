@@ -1,10 +1,39 @@
-p{
-  color:darkgreen;
-  text-align:left;
-  font-family:'Times New Roman', Times, serif;
+body{
+ padding:0;
+ margin:0;
 }
-h2{
-    color:black;
-    text-align:left;
-    font-family:'Times New Roman', Times, serif;
+form{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  max-width: 500px;
+  background-color: rgba(170, 205, 205, 0.401);
+}
+h1 {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  color:rgba(13, 68, 68, 0.874);
+}
+input,textarea{
+  width: 200px;
+  padding:4.5px;
+  color:rgb(2, 13, 13);
+  margin-left:20px ;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.934);
+  
+}
+
+
+
+input:hover,input:focus{
+  border-color:azure;
+  box-shadow: spx 0 10px;
+  background-color:rgb(172, 212, 212);
+  font-weight:bold ;
+} 
+
+textarea{
+  width: 900px;
+  height: 120px;
+  max-width: 400px;
 }

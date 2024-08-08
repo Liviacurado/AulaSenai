@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-  <html>
-    <body>
-    <h2>Meu formulário </h2>
-    <p>Nome</p>
 
-    <input type = "text" value = entrada disabled> 
-   <button type = "button" onclick = " document.getElementById('Enviar')">Enviar</button> 
-    <p id ="Enviar"></p>
-    </body>
-  </html>
+    
+      <Title> Formulário de cadastro de veiculo. </Title>
+    
+    <form name ="cadVeiculo" action="">
+
+      <h1>Insira os dados do veiculo</h1>
+
+      <input type = "text" id = placaid placeholder=" placa de veiculo" required=" required" name = "placa"/>
+      <label for = "placa"> Placa</label>
+
+      <input type = "text" id = Modeloid placeholder=" Modelo Veiculo " required=" required" name = "Modelo" #inputModelo/>
+      <label for = "Modelo">Modelo</label>
+
+      <input type = "number" name = "Ano Modelo" id = Anomodeloid min = "1900" max="2099" value ="2016" step ="1" value ="2024" placeholder="yyyy" required/>
+      <label for = "Anomodeloid">Ano Modelo</label>
+
+      <input type = "number" name = "Ano Fabricacao" id = AnoFabricacaoid  min = "1900" max="2099" value ="2016" step ="1" value ="2024" placeholder="yyyy" required/>
+      <label for = "AnoFabricacaoid">Ano Fabricação</label>
+      
+      <input type ="submit" (click)="Enviar(inputModelo.value)"  value = "ENVIAR"/>
+
+    </form>
+   <hr>
+
+    <form action = "calculo"> 
+      <input type ="text" id = numAid placeholder="Valor" required ="required" name ="numA"#numA/>+
+      <input type ="text" id = numBid placeholder="Valor"required="required" name="numB"#numB > = XXX
+      <output name = "resultado"></output>
+     <input type ="submit" id ="resid" name = "res" (click)="soma(numA.value,numB.value)" value ="calcular"/>
+
+    </form>
+ 

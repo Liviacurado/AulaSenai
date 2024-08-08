@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,6 +8,25 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  constructor(){}
+
+  public modelo = '';
+
+  ngOnInit(): void {
+      
+  }
   title = 'AulaSenai';
+
+  Enviar(inputModelo:String){ 
+    
+    alert ('OPA '+inputModelo+ ' foi cadastrado');
+  }
+  
+   soma (a:String,b:String){
+    let numA = Number (a);
+    let numB = Number (b);
+    return numA + numB;
+   }
+  
 }
