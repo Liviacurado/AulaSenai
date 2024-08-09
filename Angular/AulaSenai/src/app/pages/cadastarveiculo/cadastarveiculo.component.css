@@ -1,0 +1,25 @@
+body{
+    padding:0;
+    margin:0;
+   }
+   form{
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 15px;
+     max-width: 500px;
+     background-color: rgba(170, 205, 205, 0.401);
+   }
+   h1 {
+     margin-bottom: 20px;
+     margin-left: 20px;
+     color:rgba(13, 68, 68, 0.874);
+     background-color: rgba(170, 205, 205, 0.401);
+   }
+   input,textarea{
+     width: 200px;
+     padding:4.5px;
+     color:rgb(2, 13, 13);
+     margin-left:20px ;
+     margin-right: 10px;
+     background-color: rgba(255, 255, 255, 0.934);
+     
+   }
