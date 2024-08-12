@@ -16,9 +16,8 @@ body{
    }
    input,textarea{
      width: 200px;
-     padding:4.5px;
+     padding:5.5px;
      color:rgb(2, 13, 13);
-     
      background-color: rgba(255, 255, 255, 0.934);
      
    }

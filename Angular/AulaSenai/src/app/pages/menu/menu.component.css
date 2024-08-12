@@ -16,7 +16,17 @@ h1 {
     width: 200px;
     padding:4.5px;
     color:rgb(2, 13, 13);
-    margin-left:20px ;
+    margin-left:50px ;
     margin-right: 10px;
     background-color: rgba(255, 255, 255, 0.934);
   }
+
+  button{
+    text-align: center;
+    font-size:15px;
+    background-color: rgba(180, 215, 208, 0.992);
+  }
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(170, 205, 205, 0.401);}
+ 

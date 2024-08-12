@@ -23,3 +23,9 @@ body{
      background-color: rgba(255, 255, 255, 0.934);
      
    }
+
+  button{
+    margin-left:20px ;
+    margin-right: 10px;
+
+  }
