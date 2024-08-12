@@ -1,0 +1,16 @@
+h1 {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color:rgba(13, 68, 68, 0.874);
+    background-color: rgba(170, 205, 205, 0.401);
+  }
+  form{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    max-width: 1000px;
+    background-color: rgba(170, 205, 205, 0.401);}
+label{
+    margin-left:20px ;
+     font-size: 20px;
+     font-family: 'Times New Roman', Times, serif;
+   }
