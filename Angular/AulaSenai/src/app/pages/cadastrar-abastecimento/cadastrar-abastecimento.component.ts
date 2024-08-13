@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './cadastrar-abastecimento.component.css'
 })
 export class CadastrarAbastecimentoComponent {
+  displaymessage (tipo:String,msg:String){
+    alert(tipo + ' '+ msg +'foi cadastrado')
+  }
 
 }
