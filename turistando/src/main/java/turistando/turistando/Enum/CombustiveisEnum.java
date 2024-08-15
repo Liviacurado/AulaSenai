@@ -6,8 +6,6 @@ public enum CombustiveisEnum {
     DIESEL,
     ALCOOL,
     GNV,
-    FLEX;
-
-  
+    FLEX; 
 
 }

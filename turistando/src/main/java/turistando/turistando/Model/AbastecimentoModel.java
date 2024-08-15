@@ -6,10 +6,6 @@ import turistando.turistando.Enum.CombustiveisEnum;
 
 public class AbastecimentoModel {
     private Date data;
-    
-    
-
-
     private Double valor;
     private double quantidadeCombustivel;
     private double quilometragem;
