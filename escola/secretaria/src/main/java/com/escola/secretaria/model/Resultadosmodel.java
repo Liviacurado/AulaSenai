@@ -46,8 +46,14 @@ public class Resultadosmodel implements Serializable{
     private double media;
 
     @Column(name = "ResultadoFinal")
+    private String ResultadoFinal;
     
-    
+  
+
+    public String getResultadoFinal() {
+        return ResultadoFinal;
+    }
+
     public void setResultadoFinal(String resultadoFinal) {
         ResultadoFinal = resultadoFinal;
     }
