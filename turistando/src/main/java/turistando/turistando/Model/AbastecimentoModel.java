@@ -1,6 +1,7 @@
 package turistando.turistando.Model;
 
 import java.util.Date;
+import java.util.List;
 
 import turistando.turistando.Enum.CombustiveisEnum;
 
@@ -91,8 +92,11 @@ public abstract class AbastecimentoModel implements Calculomodel {
 
   public void Calcularconsumomedio(){
 
-    
+    List<AbastecimentoModel> abastecimentoModels;
+    double AbastecimentoAntigo = 0;
+    double AbastecimentoAtual = 0;
 
+    
   }
 
 }
