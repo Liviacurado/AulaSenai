@@ -4,23 +4,32 @@ import java.util.Date;
 
 import turistando.turistando.Enum.CombustiveisEnum;
 
-public class AbastecimentoModel {
+public abstract class AbastecimentoModel implements Calculomodel {
     private Date data;
     private Double valor;
-    private double quantidadeCombustivel;
+    private double abs;
     private double quilometragem;
     private CombustiveisEnum tipo;
     
-    
-    
-    
-    public AbastecimentoModel(Double valor, double quantidadeCombustivel, double quilometragem, CombustiveisEnum tipo,Date data) {
+    public AbastecimentoModel(Date data, Double valor, double abs, double quilometragem, CombustiveisEnum tipo) {
+        this.data = data;
         this.valor = valor;
-        this.quantidadeCombustivel = quantidadeCombustivel;
+        this.abs = abs;
         this.quilometragem = quilometragem;
         this.tipo = tipo;
-        this.data = data;
     }
+
+
+    public double getAbs() {
+        return abs;
+    }
+
+
+    public void setAbs(double abs) {
+        this.abs = abs;
+    }
+
+
     
     
     public Date getData() {
@@ -47,23 +56,6 @@ public class AbastecimentoModel {
         this.valor = valor;
     }
 
-
-
-
-    public double getQuantidadeCombustivel() {
-        return quantidadeCombustivel;
-    }
-
-
-
-
-    public void setQuantidadeCombustivel(double quantidadeCombustivel) {
-        this.quantidadeCombustivel = quantidadeCombustivel;
-    }
-
-
-
-
     public double getQuilometragem() {
         return quilometragem;
     }
@@ -89,17 +81,18 @@ public class AbastecimentoModel {
         this.tipo = tipo;
     }
 
+    public void Calcularabastecimento(){
+       double AbastecimentoAntigo = 0;
+       double AbastecimentoAtual = 0;
 
+       double total = (AbastecimentoAntigo - AbastecimentoAtual)/getAbs();
 
+    }
 
-    @Override
-    public String toString() {
-                return 
-                ", Data: "+  getData() +  
-                ", Quilometragem: " +  getQuilometragem() +
-                ", TipoCombustivel: " + getTipo() +
-                ", Quantidade Combustivel(litros): " +  + getQuantidadeCombustivel();
-                
+  public void Calcularconsumomedio(){
 
-}
+    
+
+  }
+
 }
