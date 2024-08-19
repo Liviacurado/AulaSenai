@@ -3,8 +3,10 @@ package turistando.turistando.Model;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.Entity;
 import turistando.turistando.Enum.CombustiveisEnum;
 
+@Entity
 public abstract class AbastecimentoModel implements Calculomodel {
     private Date data;
     private Double valor;

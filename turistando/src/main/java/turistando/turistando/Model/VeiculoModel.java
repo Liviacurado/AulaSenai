@@ -1,16 +1,30 @@
 package turistando.turistando.Model;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import turistando.turistando.Enum.CombustiveisEnum;
 
 @Entity
+@Table(name = "Veículo")
 public class VeiculoModel {
+
  @Id
+ @Column (name = "Placa")
+ @NotNull 
  private String placa;
- 
- 
-private String marca;
+
+ @Column(name = "Marca")
+ @NotBlank (message = "A marca não pode ser vazia") 
+ @Nonnull
+ private String marca;
+
  private String modelo;
  private int anoModelo;
  private int anoFabricacao;
@@ -18,6 +32,10 @@ private String marca;
  private long RENAVAM;
  private double motorizacao;
  private double capacidadeTanque;
+
+ @Column (name = "Combustíveis ")
+  @Enumerated(EnumType.STRING)
+  @NotNull
  private CombustiveisEnum combustivel;
 
 
