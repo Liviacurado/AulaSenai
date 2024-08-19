@@ -82,21 +82,23 @@ public abstract class AbastecimentoModel implements Calculomodel {
         this.tipo = tipo;
     }
 
-    public void Calcularabastecimento(){
-       double AbastecimentoAntigo = 0;
-       double AbastecimentoAtual = 0;
 
-       double total = (AbastecimentoAntigo - AbastecimentoAtual)/getAbs();
 
+  public double Calcularabastecimento(List <AbastecimentoModel> abastecimentos){
+        double consumoTotal = 0;
+        for (int i = 1; i < abastecimentos.size(); i++) {
+            AbastecimentoModel abastecimentoAtual = abastecimentos.get(i);
+            AbastecimentoModel abastecimentoAnterior = abastecimentos.get(i - 1);
+
+            double distanciaPercorrida = abastecimentoAtual.quilometragem - abastecimentoAnterior.quilometragem;
+            double consumoIndividual = distanciaPercorrida / abastecimentoAtual.abs;
+            consumoTotal += consumoIndividual;
+        }
+
+         return (consumoTotal / (abastecimentos.size() - 1)); 
+    
     }
-
-  public void Calcularconsumomedio(){
-
-    List<AbastecimentoModel> abastecimentoModels;
-    double AbastecimentoAntigo = 0;
-    double AbastecimentoAtual = 0;
-
     
   }
 
-}
+

@@ -5,6 +5,7 @@ import java.util.Date;
 import turistando.turistando.Enum.TipodeGastoEnum;
 
 public class Gastosmodel {
+
     private TipodeGastoEnum gasto;
     private double valor;
     private Date data;
@@ -16,7 +17,8 @@ public class Gastosmodel {
         this.valor = valor;
         this.data = data;
         this.descricao = descricao;
-    }
+      }
+
     public TipodeGastoEnum getGasto() {
         return gasto;
     }
