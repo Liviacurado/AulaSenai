@@ -83,6 +83,7 @@ public abstract class AbastecimentoModel implements Calculomodel {
     }
 
 
+// crie exceçao para capturar o erro caso o abastecimento seja menos de dois 
 
   public double Calcularabastecimento(List <AbastecimentoModel> abastecimentos){
         double consumoTotal = 0;

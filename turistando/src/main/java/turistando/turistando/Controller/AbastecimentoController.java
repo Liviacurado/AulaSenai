@@ -13,7 +13,7 @@ import turistando.turistando.Repository.Abastecimentorepository;
 
 @RestController
 public class AbastecimentoController {
-
+ // crie uma excessao para caso o preencimento seja nullo (not null)
     @Autowired
 
     private Abastecimentorepository abastecimentorepository;
