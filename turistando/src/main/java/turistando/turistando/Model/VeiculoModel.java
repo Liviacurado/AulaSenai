@@ -7,6 +7,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import turistando.turistando.Enum.CombustiveisEnum;
@@ -25,12 +26,34 @@ public class VeiculoModel {
  @Nonnull
  private String marca;
 
+ @Column(name = "Modelo")
+ @NotBlank (message = "O modelo não pode ser vazio") 
+ @Nonnull
  private String modelo;
+ 
+ @Column (name = "Ano Modelo")
+ @Min(value = 1,message = "o ano do modelo não pode ser negativo ")
  private int anoModelo;
+
+ @Column (name = "Ano Fabricação")
+ @Min(value = 1,message = "o valor não pode ser negativo ")
  private int anoFabricacao;
+
+ @Column(name = "Cor")
+ @NotBlank (message = "A Cor não pode ser vazia") 
+ @Nonnull
  private String cor;
+
+ @Column (name = "Renavam")
+ @Min(value = 1,message = "o valor não pode ser negativo ")
  private long RENAVAM;
+
+ @Column (name = "Motorização")
+ @Min(value = 1,message = "o valor não pode ser negativo ")
  private double motorizacao;
+
+@Column (name = "Capacidade do tanque ")
+ @Min(value = 1,message = "o valor não pode ser negativo ")
  private double capacidadeTanque;
 
  @Column (name = "Combustíveis ")
