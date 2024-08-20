@@ -1,6 +1,7 @@
 package turistando.turistando.Model;
 
 import java.util.Date;
+import java.util.List;
 
 import turistando.turistando.Enum.TipodeGastoEnum;
 
@@ -43,4 +44,14 @@ public class Gastosmodel {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-}
+
+    public double calcularGastosTotais(List <Gastosmodel> gastos) {
+        double totalGastos = 0;
+        for (Gastosmodel gasto : gastos) {
+            totalGastos += gasto.getValor();
+        }
+        return totalGastos;
+
+    }
+    }
+
