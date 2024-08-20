@@ -13,7 +13,7 @@ import jakarta.validation.constraints.NotNull;
 import turistando.turistando.Enum.CombustiveisEnum;
 
 @Entity
-@Table(name = "Veículo")
+@Table(name = "Veiculo")
 public class VeiculoModel {
 
  @Id
