@@ -1,6 +1,6 @@
 package turistando.trabalhojava.Model;
 
-import jakarta.annotation.Nonnull;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -23,37 +23,37 @@ public class VeiculoModel {
 
  @Column(name = "Marca")
  @NotBlank (message = "A marca não pode ser vazia") 
- @Nonnull
+ @NotNull
  private String marca;
 
  @Column(name = "Modelo")
  @NotBlank (message = "O modelo não pode ser vazio") 
- @Nonnull
+ @NotNull
  private String modelo;
  
  @Column (name = "Ano Modelo")
- @Min(value = 1,message = "o ano do modelo não pode ser negativo ")
+ @Min(value = 1,message = "o ano do modelo não pode ser menor que um ")
  private int anoModelo;
 
  @Column (name = "Ano Fabricação")
- @Min(value = 1,message = "o valor não pode ser negativo ")
+ @Min(value = 1,message = "o valor não pode ser menor que um  ")
  private int anoFabricacao;
 
  @Column(name = "Cor")
  @NotBlank (message = "A Cor não pode ser vazia") 
- @Nonnull
+ @NotNull
  private String cor;
 
  @Column (name = "Renavam")
- @Min(value = 1,message = "o valor não pode ser negativo ")
+ @Min(value = 1,message = "o valor não pode ser menor que um")
  private long RENAVAM;
 
  @Column (name = "Motorização")
- @Min(value = 1,message = "o valor não pode ser negativo ")
+ @Min(value = 1,message = "o valor não pode ser menor que um")
  private double motorizacao;
 
 @Column (name = "Capacidade do tanque ")
- @Min(value = 1,message = "o valor não pode ser negativo ")
+ @Min(value = 1,message = "o valor não pode ser menor que um")
  private double capacidadeTanque;
 
  @Column (name = "Combustíveis ")
