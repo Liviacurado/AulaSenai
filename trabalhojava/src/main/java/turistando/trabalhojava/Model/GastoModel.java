@@ -11,6 +11,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -20,15 +22,18 @@ import turistando.trabalhojava.Enum.TipodeGasto;
 @Entity
 @Table(name = "Gastos")
 public class GastoModel {
+    @OneToOne
+    @JoinColumn(name = "Placa") 
+    private VeiculoModel veiculoModel;
 
- @Column (name = "Tipo de gasto ")
+@Column (name = "Tipo de gasto ")
   @Enumerated(EnumType.STRING)
   @NotNull
   private TipodeGasto gasto;
 
- @Column (name = "Valor")
- @Min(value = 1,message = "o valor não pode ser menor que um")
- @NotNull
+  @Column (name = "Valor")
+  @Min(value = 1,message = "o valor não pode ser menor que um")
+  @NotNull
   private double valor;
 
     @Column(name ="data")
@@ -48,7 +53,9 @@ public class GastoModel {
         this.data = data;
         this.descricao = descricao;
     }
-
+ public VeiculoModel getVeiculoModel() {
+        return veiculoModel;
+    }
     public TipodeGasto getGasto() {
         return gasto;
     }
