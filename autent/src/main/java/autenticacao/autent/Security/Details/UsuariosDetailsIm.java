@@ -1,12 +1,12 @@
-package autenticacao.autent.Details;
+package autenticacao.autent.Security.Details;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
-import java.util.stream.Collector;
+
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import autenticacao.autent.Model.UsuarioModel;
 import lombok.Getter;
 
