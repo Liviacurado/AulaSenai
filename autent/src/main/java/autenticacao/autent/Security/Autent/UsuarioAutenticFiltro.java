@@ -1,23 +1,21 @@
 package autenticacao.autent.Security.Autent;
 
+import java.io.IOException;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import java.io.IOException;
 
 import autenticacao.autent.Model.UsuarioModel;
-import autenticacao.autent.Repository.UsuarioRepository;
 import autenticacao.autent.Security.Details.UsuariosDetailsIm;
-import autenticacao.autent.Security.Config.SegurancaConfig;
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 
 @Component
 public class UsuarioAutenticFiltro extends OncePerRequestFilter{
@@ -38,7 +36,7 @@ public class UsuarioAutenticFiltro extends OncePerRequestFilter{
                 UsuarioModel usuario = usuarioRepository.findByEmail(objeto).get();
                 UsuariosDetailsIm usuarioDetailsIm = new UsuariosDetailsIm(usuario);
 
-                Authentication authentic = new UsernamePasswordAuthenticationToken(usuarioDetailsIm.getUsername(), null, usuarioDetailsImpl.getAuthorities()); 
+                Authentication authentic = new UsernamePasswordAuthenticationToken(usuarioDetailsIm.getUsername(), null, usuarioDetailsIm.getAuthorities()); 
 
                 SecurityContextHolder.getContext().setAuthentication(authentic);
             }

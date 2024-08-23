@@ -9,8 +9,11 @@ import autenticacao.autent.Model.UsuarioModel;
 import autenticacao.autent.Repository.UsuarioRepository;
 
 public class UsuarioDetailsServiceim implements UserDetailsService{
+
     @Autowired
+
     private UsuarioRepository usuarioRepository;
+    
     @Override
     public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException{
         UsuarioModel usuario = usuarioRepository.findByEmail(username).orElseThrow(()-> new RuntimeException("Usuário não encontrado"));

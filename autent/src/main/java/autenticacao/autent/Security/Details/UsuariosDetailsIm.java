@@ -3,8 +3,8 @@ package autenticacao.autent.Security.Details;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import autenticacao.autent.Model.UsuarioModel;
@@ -25,7 +25,7 @@ public class UsuariosDetailsIm implements UserDetails{
 
     @Override 
     public Collection <? extends GrantedAuthority> getAuthorities(){
-        return user.getRules().stream().map(rules -> new SimpleGrantedAuthority(rules.getTipo().tipo())).collect(Collectors.toList());
+        return user.getRules().stream().map(rules -> new SimpleGrantedAuthority(rules.getTipo().toString())).collect(Collectors.toList());
     }
             @Override
             public String getPassword(){
