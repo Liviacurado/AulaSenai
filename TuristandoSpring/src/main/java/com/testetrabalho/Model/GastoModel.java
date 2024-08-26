@@ -28,7 +28,7 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "Gastos")
 public class GastoModel {
     
-    @Id
+@Id
  @Column (name = "idGasto")
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private long idGasto;
@@ -48,8 +48,8 @@ public class GastoModel {
   private double valor;
 
     @Column(name ="data")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date data;
 
 

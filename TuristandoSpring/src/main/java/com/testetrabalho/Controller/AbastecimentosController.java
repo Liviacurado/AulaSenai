@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.testetrabalho.Model.AbastecimentoModel;
@@ -19,7 +21,7 @@ public class AbastecimentosController {
     private AbastecimentosRepository abastecimentosrepository;
 
     @PostMapping("/cadastrarabastecimento")
-    public AbastecimentoModel cadastrarabastecimento(AbastecimentoModel abastecimento) {
+    public AbastecimentoModel cadastrarabastecimento(@RequestBody AbastecimentoModel abastecimento) {
         return abastecimentosrepository.save(abastecimento);
     }
     

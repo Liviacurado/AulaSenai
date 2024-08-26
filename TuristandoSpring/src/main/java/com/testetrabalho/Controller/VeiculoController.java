@@ -16,13 +16,13 @@ import com.testetrabalho.Repository.VeiculoRepository;
 
 @RestController
 public class VeiculoController {
- @Autowired
 
+   @Autowired
     private VeiculoRepository veiculorepository;
 
 
     @PostMapping("/cadastrarveiculo")
-    public VeiculoModel cadastrarveiculo(VeiculoModel veiculo) {
+    public VeiculoModel cadastrarveiculo(@RequestBody VeiculoModel veiculo) {
        return veiculorepository.save(veiculo);
         
         

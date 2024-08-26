@@ -29,6 +29,26 @@ public class AbastecimentoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idabs;
 
+    public long getIdabs() {
+        return idabs;
+    }
+
+
+    public void setIdabs(long idabs) {
+        this.idabs = idabs;
+    }
+
+
+    public VeiculoModel getVeiculo() {
+        return veiculo;
+    }
+
+
+    public void setVeiculo(VeiculoModel veiculo) {
+        this.veiculo = veiculo;
+    }
+
+
     @ManyToOne(cascade= CascadeType.PERSIST)
     @JoinColumn(name = "Placa", referencedColumnName="placa") 
     private VeiculoModel veiculo;
