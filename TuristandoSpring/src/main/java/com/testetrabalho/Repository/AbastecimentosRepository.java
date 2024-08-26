@@ -10,7 +10,7 @@ import com.testetrabalho.Model.AbastecimentoModel;
 
 
 @Repository
-public interface AbastecimentosRepository extends JpaRepository <AbastecimentoModel,Long  >{
+public interface AbastecimentosRepository extends JpaRepository <AbastecimentoModel,Long >{
 
     public List<AbastecimentoModel> findAll();
 

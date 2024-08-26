@@ -13,3 +13,14 @@ Cadastro de Veiculo
 
    
 }
+ cadastrar abastecimento 
+{  
+     "Placa":{"veiculo":"SMM3D45"},
+     "data":"2024-09-09",
+     "valor": 234.00,
+     "abs": 20.4,
+     "quilometragem": 144.45,
+     "tipo": "GASOLINA"
+
+
+}
