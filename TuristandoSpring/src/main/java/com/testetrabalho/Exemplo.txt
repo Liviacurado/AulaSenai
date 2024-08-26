@@ -1,0 +1,15 @@
+Cadastro de Veiculo 
+{ 
+"placa":"SMM3D45",
+"marca":"Citroen",
+"modelo":"C3",
+"anoModelo":2024,
+"anoFabricacao":2024,
+"cor":"cinza",
+"RENAVAN":"54654545456",
+"motorizacao":1.0,
+"capacidadeTanque":"40.00",
+"combustivel": GASOLINA
+
+   
+}
