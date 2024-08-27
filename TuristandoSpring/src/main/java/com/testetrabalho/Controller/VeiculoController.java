@@ -23,10 +23,10 @@ public class VeiculoController {
 
     @PostMapping("/cadastrarveiculo")
     public VeiculoModel cadastrarveiculo(@RequestBody VeiculoModel veiculo) {
-       return veiculorepository.save(veiculo);
+     return veiculorepository.save(veiculo);
+ 
+ }
         
-        
-    }
 
     @GetMapping("/listarVeiculos")
     public List<VeiculoModel> listarVeiculos () {

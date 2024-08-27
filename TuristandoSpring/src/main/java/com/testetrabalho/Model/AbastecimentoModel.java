@@ -60,21 +60,8 @@ public class AbastecimentoModel {
     
     @Column (name = "Combustíveis ")
     @Enumerated(EnumType.STRING)
-    
     private CombustiveisEnum tipo;
     
-    // public AbastecimentoModel(Date data, Double valor, double abs, double quilometragem, CombustiveisEnum tipo) {
-        //     this.data = data;
-        //     this.valor = valor;
-        //     this.abs = abs;
-        //     this.quilometragem = quilometragem;
-        //     this.tipo = tipo;
-        // }
-        
-     
-
-// crie exceçao para capturar o erro caso o abastecimento seja menos de dois 
-
   public long getIdabs() {
         return idabs;
     }
